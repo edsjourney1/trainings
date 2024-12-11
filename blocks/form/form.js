@@ -350,8 +350,7 @@ async function createForm(formURL) {
     if (input) {
       input.id = fd.Id;
       input.name = fd.Name;
-     // input.value = fd.Value;
-      input.Placeholder = fd.Placeholder;
+      input.value = fd.Value;
       if (fd.Description) {
         input.setAttribute('aria-describedby', `${fd.Id}-description`);
       }

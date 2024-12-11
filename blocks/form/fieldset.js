@@ -54,25 +54,3 @@ export default async function decorate(form) {
     validateMin(fieldset);
   });
 }
-
-const formWrapper = document.querySelector(".test-drive-form div:nth-child(4)");
-const newDiv = document.createElement("div");
-newDiv.classList.add("columns-wrapper");
-newDiv.innerHTML = `
-  <div class="columns testdrive-formtext block columns-1-cols" data-block-name="columns" data-block-status="loaded">
-    <div>
-      <div>
-        <p>
-          <span class="icon icon-icon-img-dsc-062">
-            <svg xmlns="http://www.w3.org/2000/svg">
-              <use href="#icons-sprite-icon-img-dsc-062"></use>
-            </svg>
-          </span>Contact Details
-        </p>
-      </div>
-    </div>
-  </div>
-`;
-
-// Insert the new div under the "form-wrapper"
-if (formWrapper) formWrapper.insertBefore(newDiv, formWrapper.firstChild);
