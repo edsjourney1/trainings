@@ -8,7 +8,7 @@
   "copyMode": [
     {
       "mimeType": "image/*",
-      "value": "use-alt-text"
+      "value": "reference"
     }
   ]
 }
