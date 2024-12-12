@@ -23,7 +23,7 @@ import {
   loadBlocks,
   loadCSS,
 } from './lib-franklin.js';
-
+import assetsInit from './aem-assets-plugin-support.js';
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
@@ -297,4 +297,5 @@ async function loadPage() {
   loadDelayed();
 }
 
+await assetsInit(); // This to be done before loadPage() function invocation
 loadPage();
