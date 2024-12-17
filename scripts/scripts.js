@@ -297,5 +297,4 @@ async function loadPage() {
   loadDelayed();
 }
 
-await assetsInit(); // This to be done before loadPage() function invocation
 loadPage();

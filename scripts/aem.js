@@ -280,10 +280,7 @@ function createOptimizedPicture(
   breakpoints = [{ media: '(min-width: 600px)', width: '2000' }, { width: '750' }],
 ) {
 
-  // Add below lines of code //
-  if (window.hlx?.aemassets?.createOptimizedPicture) {
-    return window.hlx.aemassets.createOptimizedPicture(src, alt, eager, breakpoints);
-  }
+
   // Add above lines of code //
 
   const url = new URL(src, window.location.href);
@@ -560,10 +557,7 @@ function buildBlock(blockName, content) {
  */
 async function loadBlock(block) {
 
-  // Add below lines of code //
-  if (window.hlx?.aemassets?.loadBlock) {
-    return window.hlx.aemassets.loadBlock(block);
-  }
+
   // Add above lines of code //
 
   const status = block.dataset.blockStatus;
