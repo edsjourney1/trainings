@@ -23,7 +23,7 @@ import {
   loadBlocks,
   loadCSS,
 } from './lib-franklin.js';
-import assetsInit from './aem-assets-plugin-support.js';
+
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
