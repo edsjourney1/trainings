@@ -28,8 +28,8 @@
         "environments": ["edit", "dev", "preview"],
         "url": "https://dev1--wmlocal--sonalcognizant.aem.page/",
         "includePaths": ["**.docx**"],
-        "passConfig": true,
-        "isPalette": true
+        "passConfig": true
+
         }
     ]
   }
