@@ -1,0 +1,16 @@
+
+.alert {
+    background-color: var(--link-color);
+    color: var(--background-color);
+    font-weight: 700;
+  }
+  
+  .alert a { 
+    color: var(--background-color);
+    text-decoration: underline;
+  }
+  
+  .alert > div {
+    padding: 1rem;
+  }
+  
