@@ -30,6 +30,15 @@
         "includePaths": ["**.docx**"],
         "passConfig": true
 
+        },
+        {
+          "id": "accessibility-mode",
+          "title": "Accessibility Mode",
+          "environments": [
+            "preview",
+            "dev"
+          ],
+          "event": "accessibility-mode"
         }
     ]
   }
