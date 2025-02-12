@@ -29,7 +29,7 @@ import {
 import initAccessibilityMode from '../tools/sidekick/plugins/accessibility-mode/accessibility-mode.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
-
+let isA11yModeActive = false;
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
@@ -45,7 +45,8 @@ function buildHeroBlock(main) {
   }
 }
 
-/** create an element.
+/** 
+ * create an element.
 
  * @param {string} tagName the tag for the element
 
