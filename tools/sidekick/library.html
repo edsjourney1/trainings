@@ -43,27 +43,31 @@
       library.config = {
         base: '/tools/sidekick/library.json',
 		  plugins: {
-			blocks: {
-			  encodeImages: true,
-			  viewPorts: [
-				{
-				  width: '599px',
-				  label: 'Small',
-				  icon: 'device-phone',
-				},
-				{
-				  width: '899px',
-				  label: 'Medium',
-				  icon: 'device-tablet',
-				},
-				{
-				  width: '100%',
-				  label: 'Large',
-				  icon: 'device-desktop',
-				  default: true,
-				},
-			  ],
-			}
+        tags: {
+            src: '/tools/sidekick/plugins/tags/tags.js',
+          },
+
+        blocks: {
+          encodeImages: true,
+          viewPorts: [
+          {
+            width: '599px',
+            label: 'Small',
+            icon: 'device-phone',
+          },
+          {
+            width: '899px',
+            label: 'Medium',
+            icon: 'device-tablet',
+          },
+          {
+            width: '100%',
+            label: 'Large',
+            icon: 'device-desktop',
+            default: true,
+          },
+          ],
+        }
 		  }
       }
 
