@@ -46,7 +46,7 @@ let selectedTags = [];
  */
 function getSelectedLabel() {
   const tagCount = selectedTags.length;
-  return tagCount > 0 ? `<span>${tagCount}</span> tag${tagCount !== 1 ? 's' : ''} selected` : CONST.NO_TAG_MSG;
+  return tagCount > 0 ? `<span class="tagsnum">${tagCount}</span> tag${tagCount !== 1 ? 's' : ''} selected` : CONST.NO_TAG_MSG;
 }
 
 /**
