@@ -126,8 +126,8 @@ export async function decorate(container, data, query) {
    * Copies the selected tags to the clipboard and triggers a toast message.
    */
   const handleCopyButtonClick = () => {
-    const selectedLabel = document.querySelector('.selectedLabel span');
-    if (selectedLabel && selectedLabel.textContent.trim() !== ''){
+    const finalLabel = document.querySelector('.selectedLabel span');
+    if (finalLabel && finalLabel.textContent.trim() !== ''){
           navigator.clipboard.writeText(selectedTags.join(', '));
           container.dispatchEvent(
             new CustomEvent(PLUGIN_EVENTS.TOAST, {
