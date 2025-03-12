@@ -127,14 +127,14 @@ export async function decorate(container, data, query) {
    */
   const handleCopyButtonClick = () => {
     const finalLabel = document.querySelector('.selectedLabel span');
-    if (finalLabel && finalLabel.textContent.trim() !== ''){
+   // if (finalLabel && finalLabel.textContent.trim() !== ''){
           navigator.clipboard.writeText(selectedTags.join(', '));
           container.dispatchEvent(
             new CustomEvent(PLUGIN_EVENTS.TOAST, {
               detail: { message: CONST.COPIED_MSG },
             }),
           );
-        }
+   //     }
   };
 
   /**
