@@ -126,12 +126,15 @@ export async function decorate(container, data, query) {
    * Copies the selected tags to the clipboard and triggers a toast message.
    */
   const handleCopyButtonClick = () => {
-    navigator.clipboard.writeText(selectedTags.join(', '));
-    container.dispatchEvent(
-      new CustomEvent(PLUGIN_EVENTS.TOAST, {
-        detail: { message: CONST.COPIED_MSG },
-      }),
-    );
+    const selectedLabel = document.querySelector('.selectedLabel span');
+    if (selectedLabel && selectedLabel.textContent.trim() !== ''){
+          navigator.clipboard.writeText(selectedTags.join(', '));
+          container.dispatchEvent(
+            new CustomEvent(PLUGIN_EVENTS.TOAST, {
+              detail: { message: CONST.COPIED_MSG },
+            }),
+          );
+        }
   };
 
   /**
