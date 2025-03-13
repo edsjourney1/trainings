@@ -12,7 +12,7 @@
 
 .menu-columns {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   border-bottom: solid 1px var(--border-color);
   overflow-y: hidden;
   overflow-x: scroll;
@@ -75,15 +75,13 @@ ul > li,
 }
 
 .column {
-  display: none;
+  min-width: 250px;
+  overflow: scroll;
 }
 
 .column > ul > li {
   display: flex;
   align-items: center;
-  min-width:300px;
-  overflow: scroll;
-  display: block;
 }
 
 .column > ul > li > p {
@@ -92,7 +90,7 @@ ul > li,
 }
 
 .column > ul > li > p.tag-item {
-  min-width: 215px;
+  min-width: 200px;
 }
 
 .column > ul > li.active {
