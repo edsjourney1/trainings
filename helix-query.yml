@@ -1,5 +1,4 @@
 version: 1
-
 indices:
   searchSheetless:
     include:
@@ -20,3 +19,4 @@ indices:
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT") 
+
