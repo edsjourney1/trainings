@@ -10,24 +10,31 @@ indices:
       - '/drafts/**'  
       
     properties:
-     robots:
+      robots:
         selectFirst: "head > meta[name='robots']"
         value: "attribute(el, 'content')"
-        # filter: "value ~= '(?i)^index$|^index, follow$|^index,follow$'"
-
-     title:
+      title:
         selectFirst: head > meta[property="og:title"]
-        value: attribute(el, "content")
-     description:
+        value: attribute(el, "content")  
+      description:
         selectFirst: head > meta[name="description"]
-        value: attribute(el, "content")
-     lastModified:
+        value: attribute(el, "content") 
+      lastModified:
         selectFirst: none
-        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT") 
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")  
+         
+
+        # filter: "value ~= '(?i)^index$|^index, follow$|^index,follow$'"
     filter:
-        - name: robots
-          op: match
-          value: "(?i)^index$"
+      - name: robots
+        op: match
+        value: "(?i)^index$"
+             
+
+     
+     
+      
+    
     target: s3://training-edsproject.json      
          
     
