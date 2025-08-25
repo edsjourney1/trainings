@@ -10,8 +10,8 @@ indices:
       - '/drafts/**'
     filter:
       - name: robots
-       op: ne
-       value: noindex
+        op: ne
+        value: noindex
     target: s3://training-edsproject.json
     properties:
       title:
@@ -34,8 +34,8 @@ indices:
       - '/drafts/**'
     filter:
       - name: robots
-       op: ne
-       value: noindex  
+        op: ne
+        value: noindex  
     target: /query-index.json
     properties:
       title:
