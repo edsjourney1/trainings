@@ -13,20 +13,19 @@ indices:
      robots:
        select: head > meta[name="robots"]
        value: attribute(el, 'content')
-    filter:
-     - name: robots
-       op: matches
-       value: "(?i)^index(, ?follow)?$"
-    proerties:
-      title:
+     title:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
-      description:
+     description:
         select: head > meta[name="description"]
         value: attribute(el, "content")
-      lastModified:
+     lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT") 
+    filter:
+      - name: robots
+        op: matches
+        value: "(?i)^(index(, ?follow)?|)$"       
     target: s3://training-edsproject.json      
     # filter:
     #   - name: robots
