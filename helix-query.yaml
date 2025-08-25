@@ -26,8 +26,8 @@ indices:
          
     filter:
       - name: robots
-        op: matches
-        value: "(?i)^index(, ?follow)?$"   
+        op: notEquals
+        value: noindex
         # filter: "value ~= '(?i)^index$|^index, follow$|^index,follow$'"
     
     target: s3://training-edsproject.json 
