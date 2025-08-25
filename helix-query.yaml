@@ -56,10 +56,8 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, 'content')  
-    filter:
-      - name: robots
-        op: notEquals
-        value: noindex 
+        filter: value ~= '(?i)^index$|^index, follow$|^index,follow$'
+      
     target: /query-index.json       
       
        
