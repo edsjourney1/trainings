@@ -9,11 +9,7 @@ indices:
       - '/de/**'
       - '/de'
       - '/profiles/**'
-      - '/drafts/**'
-    filter:
-      - name: robots
-        op: notContains
-        value: noindex   
+      - '/drafts/**'  
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -26,7 +22,11 @@ indices:
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT") 
       robots:
         select: head > meta[name="robots"]
-        value: attribute(el, 'content')        
+        value: attribute(el, 'content') 
+    filter:
+      - name: robots
+        op: notContains
+        value: noindex            
     
     target: s3://training-edsproject.json
     
