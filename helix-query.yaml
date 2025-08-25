@@ -24,8 +24,8 @@ indices:
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT") 
     filter:
       - name: robots
-        op: matches
-        value: "(?i)^(index(, ?follow)?|)$"       
+        op: notContains
+        value: noindex       
     target: s3://training-edsproject.json      
     # filter:
     #   - name: robots
