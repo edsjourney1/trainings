@@ -43,7 +43,6 @@ indices:
     exclude:
       - '/profiles/**'
       - '/drafts/**'
-    target: /query-index.json
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -57,6 +56,11 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, 'content')  
+    filter:
+      - name: robots
+        op: notEquals
+        value: noindex 
+    target: /query-index.json       
       
        
          
