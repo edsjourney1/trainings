@@ -25,13 +25,10 @@ indices:
         selectFirst: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT") 
     filter:
-      - function: |
-          function (props) {
-            const robots = props.robots?.toLowerCase();
-            return robots !== 'noindex';
-          }
-  
-    target: s3://training-edsproject.json      
+        - name: robots
+          op: match
+          value: "(?i)^index$"
+  target: s3://training-edsproject.json      
          
     
 
