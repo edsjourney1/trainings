@@ -11,8 +11,10 @@ indices:
       
     properties:
      robots:
-       select: head > meta[name="robots"]
-       value: attribute(el, 'content')
+        selectFirst: "head > meta[name='robots']"
+        value: "attribute(el, 'content')"
+        filter: "value ~= '(?i)^index$|^index, follow$|^index,follow$'"
+
      title:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
@@ -22,15 +24,12 @@ indices:
      lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT") 
-    filter:
-      - name: robots
-        op: notContains
-        value: noindex       
-    target: s3://training-edsproject.json      
     # filter:
     #   - name: robots
-    #     op: notContains
-    #     value: noindex          
+    #     op: ne
+    #     value: noindex       
+    target: s3://training-edsproject.json      
+         
     
 
     # filter: value ~= "(?i)^index$|^index, follow$|^index,follow$"
