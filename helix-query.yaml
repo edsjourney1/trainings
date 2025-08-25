@@ -1,7 +1,6 @@
 version: 1
 indices:
   training:
-   
     include:
       - '/**'
     
@@ -30,18 +29,12 @@ indices:
     
     target: s3://training-edsproject.json
     
-          
-      
   site:
     include:
       - '/**'
     exclude:
       - '/profiles/**'
       - '/drafts/**'
-    filter:
-      - name: robots
-        op: ne
-        value: noindex  
     target: /query-index.json
     properties:
       title:
