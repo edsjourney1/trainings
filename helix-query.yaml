@@ -28,7 +28,7 @@ indices:
         - name: robots
           op: match
           value: "(?i)^index$"
-  target: s3://training-edsproject.json      
+    target: s3://training-edsproject.json      
          
     
 
