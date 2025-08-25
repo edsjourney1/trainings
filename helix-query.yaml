@@ -3,7 +3,6 @@ indices:
   training:
     include:
       - '/**'
-    
     exclude:
       - '/de/**'
       - '/de'
@@ -22,12 +21,10 @@ indices:
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT") 
-      
     filter:
       - name: robots
         op: notContains
         value: noindex            
-    
     target: s3://training-edsproject.json
 
   site:
