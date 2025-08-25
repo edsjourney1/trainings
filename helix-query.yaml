@@ -9,10 +9,11 @@ indices:
       - '/profiles/**'
       - '/drafts/**'  
       
+      
     properties:
       robots:
         selectFirst: "head > meta[name='robots']"
-        value: "attribute(el, 'content')"
+        value: "attribute(el, 'content')"       
       title:
         selectFirst: head > meta[property="og:title"]
         value: attribute(el, "content")  
@@ -23,44 +24,39 @@ indices:
         selectFirst: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")  
          
-
-        # filter: "value ~= '(?i)^index$|^index, follow$|^index,follow$'"
     filter:
       - name: robots
-        op: match
-        value: "(?i)^index$"
-             
-
-     
-     
-      
+        op: matches
+        value: "(?i)^index(, ?follow)?$"   
+        # filter: "value ~= '(?i)^index$|^index, follow$|^index,follow$'"
     
-    target: s3://training-edsproject.json      
+    target: s3://training-edsproject.json 
+     
          
     
 
     # filter: value ~= "(?i)^index$|^index, follow$|^index,follow$"
 
-  # site:
-  #   include:
-  #     - '/**'
-  #   exclude:
-  #     - '/profiles/**'
-  #     - '/drafts/**'
-  #   target: /query-index.json
-  #   properties:
-  #     title:
-  #       select: head > meta[property="og:title"]
-  #       value: attribute(el, "content")
-  #     description:
-  #       select: head > meta[name="description"]
-  #       value: attribute(el, "content")
-  #     lastModified:
-  #       select: none
-  #       value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
-  #     robots:
-  #       select: head > meta[name="robots"]
-  #       value: attribute(el, 'content')  
+  site:
+    include:
+      - '/**'
+    exclude:
+      - '/profiles/**'
+      - '/drafts/**'
+    target: /query-index.json
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, 'content')  
       
        
          
