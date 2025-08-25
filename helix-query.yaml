@@ -32,6 +32,10 @@ indices:
     exclude:
       - '/profiles/**'
       - '/drafts/**'
+    filter:
+      - name: robots
+       op: ne
+       value: noindex  
     target: /query-index.json
     properties:
       title:
@@ -49,6 +53,7 @@ indices:
       
        
          
+
 
 
 
