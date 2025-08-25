@@ -9,7 +9,7 @@ indices:
       - '/profiles/**'
       - '/drafts/**'
     filter:
-      -name:robots
+      - name:robots
        op:ne
        value:noindex
     target: s3://training-edsproject.json
@@ -49,6 +49,7 @@ indices:
       
        
          
+
 
 
 
