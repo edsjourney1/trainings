@@ -10,10 +10,14 @@ indices:
       - '/drafts/**'  
       
     properties:
-      robots:
-        select: head > meta[name="robots"]
-        value: attribute(el, 'content') 
-        filter: value ~= "(?i)^index$|^index, follow$|^index,follow$"
+     robots:
+       select: head > meta[name="robots"]
+       value: attribute(el, 'content')
+    filter:
+     - name: robots
+       op: matches
+       value: "(?i)^index(, ?follow)?$"
+    proerties:
       title:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
