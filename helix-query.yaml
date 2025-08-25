@@ -24,7 +24,7 @@ indices:
     filter:
       - name: robots
         op: notContains
-        value: "noindex"            
+        value: noindex           
     target: s3://training-edsproject.json
 
   site:
